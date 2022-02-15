@@ -9,7 +9,7 @@ return [
         'handler'     => Gateway::class,
         'listen'      => 'websocket://0.0.0.0:7272',
         'count'       => cpu_count(),
-        'constructor' => [[
+        'constructor' => ['config' => [
             'lanIp'           => '127.0.0.1',
             'startPort'       => 2300,
             'pingInterval'    => 25,
@@ -21,7 +21,7 @@ return [
     'worker' => [
         'handler'     => BusinessWorker::class,
         'count'       => cpu_count()*2,
-        'constructor' => [[
+        'constructor' => ['config' => [
             'eventHandler'    => plugin\webman\gateway\Events::class,
             'name'            => 'ChatBusinessWorker',
             'registerAddress' => '127.0.0.1:1236',
