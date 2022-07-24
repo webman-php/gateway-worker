@@ -9,6 +9,7 @@ return [
         'handler'     => Gateway::class,
         'listen'      => 'websocket://0.0.0.0:7272',
         'count'       => cpu_count(),
+        'reloadable'  => false,
         'constructor' => ['config' => [
             'lanIp'           => '127.0.0.1',
             'startPort'       => 2300,
