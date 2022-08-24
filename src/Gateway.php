@@ -11,8 +11,6 @@ class Gateway extends \GatewayWorker\Gateway
         }
 
         $this->router = array("\\GatewayWorker\\Gateway", 'routerBind');
-        $backtrace               = debug_backtrace();
-        $this->_autoloadRootPath = dirname($backtrace[0]['file']);
     }
 
     public function onConnect($connection)

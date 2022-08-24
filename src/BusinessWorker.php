@@ -9,8 +9,6 @@ class BusinessWorker extends \GatewayWorker\BusinessWorker
         {
             $this->$key = $value;
         }
-        $backtrace               = debug_backtrace();
-        $this->_autoloadRootPath = dirname($backtrace[0]['file']);
     }
 
     public function onWorkerStart()

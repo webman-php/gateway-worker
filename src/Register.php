@@ -5,8 +5,7 @@ class Register extends \GatewayWorker\Register
 {
     public function __construct()
     {
-        $backtrace               = debug_backtrace();
-        $this->_autoloadRootPath = dirname($backtrace[0]['file']);
+        
     }
 
     public function onWorkerstart()
