@@ -56,6 +56,10 @@ class Gateway extends \GatewayWorker\Gateway
 
         $args = func_get_args();
         $this->id = $args[0]->id;
+
+        $worker = func_get_arg(0);
+        $this->_gatewayPort = substr(strrchr($worker->getSocketName(),':'),1);
+
         parent::onWorkerStart();
     }
 }
