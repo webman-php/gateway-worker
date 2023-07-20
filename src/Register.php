@@ -3,7 +3,7 @@ namespace Webman\GatewayWorker;
 
 class Register extends \GatewayWorker\Register
 {
-    public function __construct($config)
+    public function __construct($config = [])
     {
         $propertyMap = [
             'secretKey',
