@@ -3,11 +3,14 @@
   "type": "library",
   "license": "MIT",
   "require": {
-    "workerman/gateway-worker": ">=3.0"
+    "workerman/gateway-worker": ">=3.0",
+    "workerman/webman-framework": "^2.1 || dev-master"
   },
   "autoload": {
     "psr-4": {
       "Webman\\GatewayWorker\\": "src"
     }
-  }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
