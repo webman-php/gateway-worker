@@ -1,6 +1,8 @@
 <?php
 namespace Webman\GatewayWorker;
 
+use support\Context;
+
 class BusinessWorker extends \GatewayWorker\BusinessWorker
 {
     public function __construct($config)
@@ -23,5 +25,14 @@ class BusinessWorker extends \GatewayWorker\BusinessWorker
         $args = func_get_args();
         $this->id = $args[0]->id;
         parent::onWorkerStart();
+    }
+
+    public function onGatewayMessage($connection, $data)
+    {
+        try {
+            parent::onGatewayMessage($connection, $data);
+        } finally {
+            Context::destroy();
+        }
     }
 }
